@@ -1,14 +1,19 @@
 export class LoginPage {
+
+    username_field = ':nth-child(2) > .oxd-input-group > :nth-child(2) > .oxd-input'
+    password_field = ':nth-child(3) > .oxd-input-group > :nth-child(2) > .oxd-input'
+    login_button = '.oxd-button'
+
     enterUserName = (username) => {
-        cy.get(':nth-child(2) > .oxd-input-group > :nth-child(2) > .oxd-input').type(username)
+        cy.get(this.username_field).type(username)
     }
 
     enterPassword = (password) => {
-        cy.get(':nth-child(3) > .oxd-input-group > :nth-child(2) > .oxd-input').type(password)
+        cy.get(this.password_field).type(password)
 
     }
 
     clickToLogin = () => {
-        cy.get('.oxd-button').click()
+        cy.get(this.login_button).click()
     }
 }
